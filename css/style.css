@@ -15,8 +15,15 @@ p, input, textarea {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.navbar-padding-ln{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
+.logo-padding{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bg-purple{
+    background-color: purple;
+}
+
+.bg-orangered{
+    background-color: orangered;
 }

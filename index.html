@@ -5,21 +5,25 @@
         <title>AddHabit - Adicione, organize e acompanhe seus hábitos!</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/css/">
     </head>
     
     <body>
-        <nav class="navbar-expand-lg navbar-dark bg-dark navbar-padding-ln">
-            <div class="collapse navbar-collapse" id="navbarNav"> 
-                <a href="#" class="navbar-brand">AddHabit</a>
-
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
            
-                <ul class="navbar-nav">
+            <a href="#" class="navbar-brand mr-auto mr-lg-0 logo-padding">AddHabit</a>
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggle-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbars"> 
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#funcionalidades"><img src="icons/png/033-information.png" width="20px" height="20px" alt="Ícone de informação"> Funcionalidades</a>
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="#comece"><img src="icons/png/047-calendar.png" width="20px" height="20px" alt="Ícone de um calendário"> Comece aqui!</a>
+                        <a class="nav-link" href="#"><img src="icons/png/047-calendar.png" width="20px" height="20px" alt="Ícone de um calendário"> Comece aqui!</a>
                     </li>
 
                     <li class="nav-item">
@@ -32,47 +36,127 @@
                 </ul>
             </div>
         </nav>
-        <header>
-            <div class="jumbotron">
-                <h1 class="display-4">
-                    AddHabit
-                </h1>
-                <p class="lead">
-                    Adicione, organize e acompanhe seus hábitos!
-                </p>
-                <hr class="my-4">
-                <p>
-                    Se você nâo consegue organizar seus hábitos de forma personalizada, do jeito que você quer, esta pode ser 
-                    a solução para você! 
-                </p>
+
+        <main role="main" class="container">
+            <div class="jumbotron" style="background-color: slategrey; color: snow;">
+                <div class="container">
+                    <h1 class="display-4">
+                        AddHabit
+                    </h1>
+                    <p class="lead">
+                        Adicione, organize e acompanhe seus hábitos!
+                    </p>
+                    <hr class="my-4">
+                    <p>
+                        Se você nâo consegue organizar seus hábitos de forma personalizada, do jeito que você quer, esta pode ser 
+                        a solução para você! 
+                    </p>
+                </div>
             </div>
-        </header>
+        
 
-        <section id="funcionalidades">
-            <h2>Funcionalidades</h2>
-                <p>Adicione e configure cada hábito que você quer acompanhar</p>
-                <p>Separe seus hábitos por categorias: saúde, lazer, trabalho</p>
-                <p>Separe seus hábitos usando diferentes cores</p>
-                <p>Faça o acompanhamento pelo intervalo de tempo desejado</p>
-                <p>Crie lista de perguntas que pode te ajudar durante o seu dia</p>
-                <p>Veja relatórios sobre como está </p>
+            <section id="funcionalidades">
+                <div class="container">
+                    <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+                        <div class="lh-100">
+                            <h5 class="mb-0 text-white lh-100">Funcionalidades</h5>
+                            <small>Conheça as funcionalidades do AddHabit</small>
+                        </div>
+                    </div>
+                    <div class="my-3 p-3 bg-white rounded shadow-sm">
+                        <div class="media text-muted pt-3">
+                            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                                Adicione e configure cada hábito que você quer acompanhar.
+                            </p>
+                        </div>
+                        <div class="media text-muted pt-3">
+                            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                                Separe seus hábitos por categorias: saúde, lazer, trabalho... o que quiser!
+                            </p>
+                        </div>
+                        <div class="media text-muted pt-3">
+                            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                                Separe seus hábitos usando diferentes cores.
+                            </p>
+                        </div>
+                        <div class="media text-muted pt-3">
+                            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                                Faça o acompanhamento pelo intervalo de tempo desejado.
+                            </p>
+                        </div>
+                        <div class="media text-muted pt-3">
+                            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                                Crie lista de perguntas que pode te ajudar durante o seu dia.
+                            </p>
+                        </div>
+                        <div class="media text-muted pt-3">
+                            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                                Veja relatórios sobre o andamento do seu hábito.
+                            </p>
+                        </div>
+                    </div>
 
-            <h2>O que vem por aí?</h2>
-                <p></p>
-                <p>Análise dos dados para verificar como será seu próximo mês naquele hábito em específico em relação aos meses anteriores</p>
-        </section>
+                    <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-orangered rounded shadow-sm">
+                        <div class="lh-100">
+                            <h5 class="mb-0 text-white lh-100">O que vem por aí?</h5>
+                            <small>Conheça as funcionalidades do AddHabit</small>
+                        </div>
+                    </div>
+                    <div class="my-3 p-3 bg-white rounded shadow-sm">
+                        <div class="media text-muted pt-3">
+                            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                                Possibilidade de adicionar tags nos hábitos.
+                            </p>
+                        </div>
+                        <div class="media text-muted pt-3">
+                            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                                Análise dos dados para verificar a probabilidade do seu próximo mês 
+                                em um hábito específico com base nos dados dos meses anteriores.
+                            </p>
+                        </div>
+                        <div class="media text-muted pt-3">
+                            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                                Sugestão de novos hábitos baseado nas categorias que adicionar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <section id="contato">
-            <h2>Quer contribuir ou falar conosco? Entre em contato!</h2>
-            <input type="text" placeholder="Nome"><br>
-            <input type="email" placeholder="Email"><br>
-            <textarea placeholder="Mensagem"></textarea><br>
-            <button>Enviar</button>
-        </section>
 
-        <footer>
-            <p>Luciana Nunes | 2020</p>
-            <p><div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></p>
+            <section id="contato">
+                <div class="container">
+                    <h2 class="mt-5">Quer contribuir ou falar conosco? Entre em contato!</h2>
+                    <form class="needs-validation" novalidate>
+                        <label for="firstName">Nome</label>
+                        <input type="text" class="form-control" placeholder value required  id="firstName"><br>
+                        <div class="invalid-feedback">
+                            Por favor, preencha seu nome.
+                        </div>
+
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" placeholder="voce@exemplo.com.br" id="email"><br>
+                        <div class="invalid-feedback">
+                            Por favor, preencha um email válido.
+                        </div>
+
+                        <label for="message">Mensagem</label>
+                        <textarea class="form-control" id="message"></textarea>
+                        <div class="invalid-feedback">
+                            Por favor, preencha a mensagem.
+                        </div>
+                        <br>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer mt-auto py-3">
+            <div class="container">
+                <span class="text-muted">Luciana Nunes | 2020</p>
+                <p><div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></p>
+            </div>
         </footer>
 
     </body>
