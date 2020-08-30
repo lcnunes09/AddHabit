@@ -1,0 +1,16 @@
+{
+  "name": "AddHabit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/lcnunes09/AddHabit.git",
+  "author": "Luciana Nunes <lcnunes09@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.3.3",
+    "sequelize": "^6.3.4"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
+  }
+}

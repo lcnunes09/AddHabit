@@ -1,0 +1,102 @@
+# Aplicação básica backend usando Node com Jest / TDD
+
+
+
+## Criar uma pasta para o projeto e rodar o comando para gerar o arquivo package.json:
+- yarn init -y 
+
+
+## Dentro desta pasta, criar uma nova pasta server
+
+
+## Criar arquivo server.js
+## Criar arquivo app.js
+## Criar arquivo routes.js
+
+
+## Instalar o Express: rodar o comando para gerar o arquivo yarn.lock:
+- yarn add express
+
+
+## No arquivo app.js é onde vai ficar o Express e a classe controle, cnotendo middleware e a chamada para rotas 
+const express = require('express');
+class AppController {
+    constructor() {
+        this.express = express();
+
+        this.middlewhares();
+        this.routes();
+    }
+
+    middlewares() {
+        this.express.use(express.json());
+    }
+
+    routes() {
+        this.express.use(require("./routes"));
+    }
+}
+
+module.exports = new AppController().express;
+
+
+## No arquivo server.js é onde chamamos o app.js e determinamos a porta do nosso servidor
+const app = require('./app');
+
+app.listen(process.env.PORT || 3000);
+
+
+## No arquivo routes.js, chamamos as rotas baseadas no express
+const routes = require('express').Router();
+
+module.exports = routes;
+
+
+## Estrutura básica pronta! Agora vamos utilizar o sequelize para escrever em JS as linhas de comando para manipulação das informações no banco de dados - que utilizaremos o Postgres, rodando no Docker
+- yarn add sequelize pg
+
+## Para lidar com as migrations, instalar o sequelize-cli
+- yarn add sequelize-cli -D
+
+## Após a instalação, iniciar o sequelize:
+- yarn sequelize init
+
+## Organizando as pastas:
+- Colocar models e config dentro da pasta server 
+- Criar pasta database dentro de server e passar as pastas migrations e seeders para lá
+
+## Restruturação das pastas para o sequelize: 
+- Criar arquivo .sequelizerc na raiz do projeto 
+- Mudar o arquivo config/config.json para database.js
+- Criar pasta app dentro de server e colocar a pasta models 
+- No arquivo .sequelizerc, colocar:
+const path = require('path');
+
+module.exports = {
+    config: path.resolve('server', 'config', 'database.js'),
+    'models-path': path.resolve('server', 'app', 'models'),
+    'seeders-path': path.resolve('server', 'database', 'seeders'),
+    'migrations-path': path.resolve('server', 'database', 'migrations')
+};
+
+
+## Configuração do sequelize para rodar
+module.exports = {
+  host: '127.0.0.1',
+  port: 54320,
+  username: 'postgres',
+  password: 'postgres',
+  database: 'addhabit',
+  dialect: 'postgres',
+  operatorsAliases: false,
+  logging: false,
+  define: {
+    timestamps: true,
+    underscored: true,
+    underscoredAll: true,
+  }
+};
+
+
+## Para criar a primeira migration, rodar comando:
+yarn sequelize migration:create --name=create-habits
