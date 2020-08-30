@@ -101,6 +101,8 @@ module.exports = {
 ## Crian base de dados no postgres do Docker, rodar no terminal
 docker exec -i postgres psql -U postgres -c "CREATE DATABASE <your-desired-db-name> WITH ENCODING='UTF8' OWNER=postgres;"
 
+Bom website sobre Postgres no Docker: https://davejansen.com/how-to-set-up-and-use-postgres-using-docker/
+
 
 ## Para criar a primeira migration, rodar comando:
 yarn sequelize migration:create --name=create-habit
