@@ -4,7 +4,7 @@ class AppController {
     constructor() {
         this.express = express();
 
-        this.middlewhares();
+        this.middlewares();
         this.routes();
     }
 

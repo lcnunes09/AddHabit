@@ -24,7 +24,7 @@ class AppController {
     constructor() {
         this.express = express();
 
-        this.middlewhares();
+        this.middlewares();
         this.routes();
     }
 
@@ -94,6 +94,7 @@ module.exports = {
     timestamps: true,
     underscored: true,
     underscoredAll: true,
+    freezeTableName: true // prevent sequelize from pluralizing table names
   }
 };
 
@@ -105,5 +106,40 @@ Bom website sobre Postgres no Docker: https://davejansen.com/how-to-set-up-and-u
 
 
 ## Para criar a primeira migration, rodar comando:
-yarn sequelize migration:create --name=create-habit
+yarn sequelize migration:create --name=create-category
 
+
+## Primeira migração para adicionar categoria no banco
+
+
+## Alterar arquivo models/index.js: esse arquivo navega todos os models para que ele fique disponível na nossa aplicação
+- Retirar declaração de ENV
+- Atualizar linha:
+const config = require('../../config/database');
+- Tirar IFs e deixar a declaração do sequelize:
+const sequelize = new Sequelize(config.database, config.username, config.password, config);
+
+
+## Criar novo model de Category
+const { sequelize } = require(".");
+
+module.exports = (sequelize, DataTypes) => {
+    const Category = sequelize.define("Category", {
+        name: DataTypes.STRING
+    }, {
+        tableName: 'category'
+    });
+
+    return Category;
+};
+
+
+## Testar se estamos conseguindo cadastrar no banco de dados 
+- No arquivo routes.js, chamar modelo e simular a criação de um registro
+const { Category } = require ('./app/models');
+
+Category.create({
+    name: "Lazer"
+});
+
+- Rodar node server/server.js

@@ -5,11 +5,11 @@ module.exports = {
   password: 'postgres',
   database: 'addhabit',
   dialect: 'postgres',
-  operatorsAliases: false,
   logging: false,
   define: {
     timestamps: true,
     underscored: true,
-    underscoredAll: true
+    underscoredAll: true,
+    freezeTableName: true
   },
 };
