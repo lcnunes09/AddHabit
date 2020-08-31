@@ -5,12 +5,19 @@
   "repository": "https://github.com/lcnunes09/AddHabit.git",
   "author": "Luciana Nunes <lcnunes09@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js --ignore __tests__",
+    "test": "jest"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "pg": "^8.3.3",
     "sequelize": "^6.3.4"
   },
   "devDependencies": {
+    "jest": "^26.4.2",
+    "nodemon": "^2.0.4",
     "sequelize-cli": "^6.2.0"
   }
 }

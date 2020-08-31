@@ -143,3 +143,22 @@ Category.create({
 });
 
 - Rodar node server/server.js
+
+
+## Instalar o nodemoon para o servidor atualizar sozinho após mudanças
+- yarn add nodemon -D
+
+## Criar script no package.json para não precisar reiniciar o servidor cada vez que atualizar algum arquivo
+"scripts": {
+    "start": "node server/server.js", // Em produção, não precisa do nodemon
+    "dev": "nodemon server/server.js --ignore __tests__" // Lembrando para ignorar os testes quando rodar o servidor em dev
+},
+
+## Criar a suite de testes
+- Criar pasta __tests__
+- Instalando o jest, executar o comando: yarn add jest -D
+- Inicializando o jest, executar o comando: yarn jest --init
+- Alterar no jest.config:
+testMatch: [
+    "**/__tests__/**/*.test.js?(x)", // Os arquivos de teste vão ter test.js
+],
