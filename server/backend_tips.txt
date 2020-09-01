@@ -162,3 +162,5 @@ Category.create({
 testMatch: [
     "**/__tests__/**/*.test.js?(x)", // Os arquivos de teste vão ter test.js
 ],
+- Criar pastas integration e unit dentro da pasta __tests__
+--- Testes de Integração são aqueles que podem ter efeito colateral, por exemplo, chamada em API, cadastro em banco de dados
